@@ -10,7 +10,10 @@ case $2 in
         url=$(echo "$page" | awk -F",|'" '/streamer/ {printf $2"/" ; getline ; print$2;}') ;;
     *etv.err.ee* ) 
         url=$(echo "$page" | awk -F",|'" '/loadFlow.*rtmp/ {print $5"/"$8}') ;;
-    *uudised.err.ee* )
+    *m3.err.ee* )
+        url=$(echo "$page" | awk -F"\[|\]|\"" '/rtmp/ {print $4$6}') ;;
+    #Works on err portal (videos/audio with preview pricture) 
+    *.err.ee* )
         url=$(echo "$page" | awk -F"=|&" '/stream/ {print "rtmp://"$9$11}') ;;
     * )
         echo "Tundmatu link" ;;
