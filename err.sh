@@ -1,5 +1,5 @@
 #!/bin/bash
-#example command: ./err.sr mplayer http://etv.err.ee/arhiiv.php?id=149166
+#example command: ./err.sh mplayer http://etv.err.ee/arhiiv.php?id=149166
 page=$(wget -q -O - "$2")
 
 url="oo"
