@@ -9,4 +9,4 @@ pp=http://viastream.viasat.tv/PlayProduct/
 
 $1 $(wget -q -O - "$pp""$id" |awk -F"\[|\]|:" '/rtmp/ {print $3 ":" $4 ":" $5 "/" $6}')
 
-
+wget -q -O - "$pp""$id" |awk -F"\[|\]|:" '/rtmp/ {print $0}'
